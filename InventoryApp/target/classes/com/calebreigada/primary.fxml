@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="419.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calebreigada.PrimaryController">
+   <children>
+      <Label layoutX="40.0" layoutY="21.0" text="Inventory Management System">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <TableView id="allParts" fx:id="allPartsTable" layoutX="32.0" layoutY="92.0" prefHeight="177.0" prefWidth="237.0">
+        <columns>
+          <TableColumn fx:id="partIdColumn" prefWidth="49.333316802978516" text="Part ID" />
+          <TableColumn id="name" fx:id="partNameColumn" prefWidth="42.000030517578125" text="Name" />
+            <TableColumn fx:id="partStockColumn" prefWidth="66.66661834716797" text="Stock" />
+            <TableColumn fx:id="partPriceColumn" prefWidth="75.0" text="Price" />
+        </columns>
+      </TableView>
+      <TableView id="allProducts" fx:id="allProductsTable" layoutX="327.0" layoutY="92.0" prefHeight="177.0" prefWidth="237.0">
+        <columns>
+          <TableColumn fx:id="productIdColumn" prefWidth="70.66668701171875" text="Product ID" />
+          <TableColumn fx:id="productNameColumn" prefWidth="61.33331298828125" text="Name" />
+            <TableColumn fx:id="productStockColumn" prefWidth="42.66668701171875" text="Stock" />
+            <TableColumn fx:id="productPriceColumn" prefWidth="63.999908447265625" text="Price" />
+        </columns>
+      </TableView>
+      <Separator layoutX="24.0" layoutY="54.0" prefWidth="200.0">
+         <effect>
+            <ColorInput height="2.0" paint="BLACK" width="255.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="318.0" layoutY="55.0" prefWidth="200.0">
+         <effect>
+            <ColorInput height="2.0" paint="#030303" width="255.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="277.0" layoutY="56.0" orientation="VERTICAL" prefHeight="200.0">
+         <effect>
+            <ColorInput height="255.0" paint="BLACK" width="2.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="24.0" layoutY="56.0" orientation="VERTICAL" prefHeight="200.0">
+         <effect>
+            <ColorInput height="255.0" paint="BLACK" width="2.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="24.0" layoutY="309.0" prefWidth="200.0">
+         <effect>
+            <ColorInput height="2.0" paint="BLACK" width="255.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="571.0" layoutY="57.0" orientation="VERTICAL" prefHeight="200.0">
+         <effect>
+            <ColorInput height="255.0" paint="BLACK" width="2.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="318.0" layoutY="310.0" prefWidth="200.0">
+         <effect>
+            <ColorInput height="2.0" paint="BLACK" width="255.0" />
+         </effect>
+      </Separator>
+      <Separator layoutX="318.0" layoutY="55.0" orientation="VERTICAL" prefHeight="200.0">
+         <effect>
+            <ColorInput height="255.0" paint="BLACK" width="2.0" />
+         </effect>
+      </Separator>
+      <Label layoutX="32.0" layoutY="65.0" text="Parts">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="327.0" layoutY="65.0" text="Products" />
+      <TextField id="partSearch" fx:id="partSearchBox" layoutX="124.0" layoutY="61.0" onAction="#searchForPart" promptText="Search by Part ID or Name" />
+      <TextField id="productSearch" fx:id="productSearchBox" layoutX="418.0" layoutY="61.0" onAction="#searchForProduct" promptText="Search by Product ID or Name" />
+      <Button id="partAddButton" fx:id="partAddButton" layoutX="113.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToAddPart" text="Add" />
+      <Button id="partModifyButton" fx:id="partModifyButton" layoutX="158.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToModifyPart" text="Modify" />
+      <Button id="partDeleteButton" fx:id="partDeleteButton" layoutX="217.0" layoutY="276.0" mnemonicParsing="false" onAction="#deletePart" text="Delete" />
+      <Button id="productDeleteButton" fx:id="productDeleteButton" layoutX="513.0" layoutY="276.0" mnemonicParsing="false" onAction="#deleteProduct" text="Delete" />
+      <Button id="productModifyButton" fx:id="productModifyButton" layoutX="453.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToModifyProduct" text="Modify" />
+      <Button id="productAddButton" fx:id="productAddButton" layoutX="408.0" layoutY="276.0" mnemonicParsing="false" onAction="#switchToAddProduct" text="Add" />
+      <Button id="exitButton" fx:id="exitButton" layoutX="525.0" layoutY="349.0" mnemonicParsing="false" onAction="#exit" text="Exit">
+         <effect>
+            <Blend mode="RED" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>

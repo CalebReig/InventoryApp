@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="417.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.calebreigada.ProductController">
+   <children>
+      <Label fx:id="titleLabel" layoutX="18.0" layoutY="30.0" prefHeight="26.0" prefWidth="144.0" text="Add Product">
+         <font>
+            <Font name="Arial Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="38.0" layoutY="90.0" text="ID" />
+      <Label layoutX="38.0" layoutY="119.0" text="Name" />
+      <Label layoutX="38.0" layoutY="151.0" text="Stock" />
+      <Label layoutX="38.0" layoutY="182.0" text="Price" />
+      <Label layoutX="38.0" layoutY="214.0" text="Max" />
+      <TextField fx:id="idField" editable="false" layoutX="83.0" layoutY="86.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="nameField" layoutX="83.0" layoutY="115.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="stockField" layoutX="83.0" layoutY="147.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="priceField" layoutX="83.0" layoutY="178.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="maxField" layoutX="83.0" layoutY="210.0" prefHeight="25.0" prefWidth="91.0" />
+      <Label layoutX="191.0" layoutY="214.0" text="Min" />
+      <TextField fx:id="minField" layoutX="219.0" layoutY="210.0" prefHeight="25.0" prefWidth="91.0" />
+      <TextField fx:id="partSearchBox" layoutX="430.0" layoutY="30.0" onAction="#searchForPart" promptText="Search by Part ID or Name" />
+      <TableView fx:id="allPartsTable" layoutX="328.0" layoutY="73.0" prefHeight="109.0" prefWidth="263.0">
+        <columns>
+          <TableColumn fx:id="partIdColumn" prefWidth="55.99993896484375" text="Id" />
+          <TableColumn fx:id="partNameColumn" prefWidth="70.0" text="Name" />
+            <TableColumn fx:id="partPriceColumn" prefWidth="73.99996948242188" text="Price" />
+            <TableColumn fx:id="partStockColumn" prefWidth="75.0" text="Stock" />
+        </columns>
+      </TableView>
+      <TableView fx:id="associatedPartsTable" layoutX="328.0" layoutY="223.0" prefHeight="109.0" prefWidth="263.0">
+         <columns>
+            <TableColumn fx:id="associatedPartIdColumn" prefWidth="62.0" text="Id" />
+            <TableColumn fx:id="associatedPartNameColumn" prefWidth="63.33331298828125" text="Name" />
+            <TableColumn fx:id="associatedPartPriceColumn" minWidth="0.0" prefWidth="85.33334350585938" text="Price" />
+            <TableColumn fx:id="associatedPartStockColumn" prefWidth="50.666707356770814" text="Stock" />
+         </columns>
+      </TableView>
+      <Button fx:id="addAssociatedPartButton" layoutX="534.0" layoutY="190.0" mnemonicParsing="false" onAction="#addAssociatedPart" text="Add" />
+      <Button fx:id="removeAssociatedPartButton" layoutX="432.0" layoutY="342.0" mnemonicParsing="false" onAction="#removeAssociatedPart" text="Remove Associated Part" />
+      <Button layoutX="430.0" layoutY="374.0" mnemonicParsing="false" onAction="#addProduct" text="Save" />
+      <Button fx:id="cancelButton" layoutX="520.0" layoutY="374.0" mnemonicParsing="false" onAction="#switchToPrimary" text="Cancel" />
+   </children>
+</AnchorPane>
